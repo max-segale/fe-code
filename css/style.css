@@ -106,7 +106,7 @@ section {
   font-size: 24px;
   font-weight: bold;
   color: #004A80;
-  background-image: linear-gradient(225deg, #F2DA56 0%, #F6BC25 100%);
+  background: #F2DA56 linear-gradient(225deg, #F2DA56 0%, #F6BC25 100%);
   box-shadow: 0 3px 0 0 #A6953B, inset 0 1px 0 0 #FFFFFF;
   border-radius: 6px;
   outline: 0;
@@ -114,6 +114,16 @@ section {
   -webkit-appearance: none;
   width: 180px;
   margin-left: 20px;
+}
+.btn-form-submit:hover {
+  background: #F2DA56;
+}
+.btn-form-submit.focus, .btn-form-submit:focus {
+  background: #F2DA56;
+  box-shadow: 0 3px 0 0 #A6953B, inset 0 1px 0 0 #FFFFFF;
+}
+.btn-form-submit.active, .btn-form-submit:active {
+  background: #F6BC25;
 }
 
 .input-group > .form-control {

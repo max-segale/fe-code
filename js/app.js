@@ -6,7 +6,7 @@ $(document).ready(function () {
    */
   function sendSearch(searchVal, searchType) {
     const proxyurl = '';
-    const url = 'https://ltv-data-api.herokuapp.com/api/v1/records.json?' + searchType + '=' + searchVal;
+    const url = `https://ltv-data-api.herokuapp.com/api/v1/records.json?${searchType}=${searchVal}`;
 
     // Clear storage before request
     localStorage.clear();

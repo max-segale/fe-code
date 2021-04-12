@@ -306,6 +306,7 @@ section {
 }
 
 .features h2 {
+  font-size: 22px;
   line-height: 30px;
 }
 
@@ -337,6 +338,7 @@ section {
     margin-bottom: 28px;
   }
   .features h2 {
+    font-size: 20px;
     line-height: 28px;
   }
   .list-item {
@@ -350,6 +352,7 @@ section {
     font-size: 33.6px;
   }
   .list-text p {
+    font-size: 16px;
     line-height: 24px;
   }
 }
@@ -357,6 +360,10 @@ section {
 @media (max-width: 767px) {
   .features .headline {
     margin-bottom: 20px;
+  }
+  .features h2 {
+    font-size: 16px;
+    line-height: 28px;
   }
   .list-item {
     margin-bottom: 16px;

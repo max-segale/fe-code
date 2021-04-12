@@ -111,8 +111,24 @@ section {
   color: #FFFFFF;
 }
 
+.search-types .nav-pills {
+  width: 100%;
+}
+
+.search-types .nav-pills .nav-item {
+  flex: 1 0 0;
+  padding: 0 4px;
+}
+
+.search-types .nav-pills .nav-item:first-child {
+  padding-left: 0;
+}
+
+.search-types .nav-pills .nav-item:last-child {
+  padding-right: 0;
+}
+
 .search-types .nav-pills .nav-link {
-  margin: 0 0 0 20px;
   padding: 0;
 }
 
@@ -134,9 +150,10 @@ section {
 .search-types .nav-pills .nav-link .nav-btn {
   border: 3px solid #F6BC25;
   border-radius: 6px;
-  padding: 8px;
-  font-size: 16px;
-  line-height: 16px;
+  padding: 6px 0;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
   color: #F6BC25;
   font-weight: bold;
   background: #004A80;
@@ -145,6 +162,22 @@ section {
 .search-types .nav-pills .nav-link.active .nav-btn {
   color: #004A80;
   background: #F6BC25;
+}
+
+@media (min-width: 767px) {
+  .search-types .nav-pills {
+    width: unset;
+  }
+  .search-types .nav-pills .nav-item {
+    flex: unset;
+    margin-left: 20px;
+    padding: 0;
+  }
+  .search-types .nav-pills .nav-link .nav-btn {
+    padding: 5px 7px;
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
 
 /* ************************************************************

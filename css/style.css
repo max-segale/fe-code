@@ -486,6 +486,7 @@ section {
   }
   .result-avatar img {
     width: 28px;
+    height: auto;
   }
 }
 

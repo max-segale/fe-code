@@ -98,6 +98,57 @@ section {
 
 /* ************************************************************
 ***************************************************************
+--- Search Type Tabs ---
+***************************************************************
+************************************************************ */
+
+.search-types {
+  margin: 0 0 16px;
+  display: flex;
+  align-items: baseline;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.search-types .nav-pills .nav-link {
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+.search-types .nav-pills .nav-link.active {
+  background: transparent;
+}
+
+.search-types .nav-pills .nav-link.active::after {
+  content: " ";
+  margin: 0 auto;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #F6BC25;
+  display: block;
+}
+
+.search-types .nav-pills .nav-link .nav-btn {
+  border: 3px solid #F6BC25;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 16px;
+  line-height: 16px;
+  color: #F6BC25;
+  font-weight: bold;
+  background: #004A80;
+}
+
+.search-types .nav-pills .nav-link.active .nav-btn {
+  color: #004A80;
+  background: #F6BC25;
+}
+
+/* ************************************************************
+***************************************************************
 --- Search Form ---
 ***************************************************************
 ************************************************************ */

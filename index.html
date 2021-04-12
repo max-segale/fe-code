@@ -21,24 +21,50 @@
         </div>
       </div>
     </nav>
+
     <section class="above-the-fold">
       <div class="container">
         <div class="headline text-white text-center mb-4 mb-md-5">
           <h1 class="mb-3">Start Your Search!</h1>
           <h2>Look up for people’s name, photos and online profiles with their email address or phone number. See what you find!</h2>
         </div>
-        
-        <form>
-          <div class="input-group">
-            <input class="form-control" type="text" name="email" placeholder="Enter an Email Address" />
-            <p class="error-msg">Please enter a valid email address</p>
-            <button id="btn-search" class="btn btn-form-submit text-uppercase" type="submit">Go!</button>
-          </div>
+        <!-- tabbed functionality for switching between email and phone searches -->
+        <div class="search-types">
+          <p class="m-0">Type of Search:</p>
+          <ul class="nav nav-pills" role="tablist">
+            <li>
+              <a class="nav-link active" id="email-tab" data-toggle="tab" href="#email-search" role="tab" aria-controls="email-search" aria-selected="true">
+                <div class="nav-btn">Email Address</div>
+              </a>
+            </li>
+            <li>
+              <a class="nav-link" id="phone-tab" data-toggle="tab" href="#phone-search" role="tab" aria-controls="phone-search" aria-selected="false">
+                <div class="nav-btn">Phone Number</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- Seperate forms for email and phone searches -->
+        <div class="tab-content">
+          <form class="tab-pane show active" id="email-search" role="tabpanel" aria-labelledby="email-tab">
+            <div class="input-group">
+              <input class="form-control" type="text" name="email" placeholder="Enter an Email Address" />
+              <p class="error-msg">Please enter a valid email address</p>
+              <button class="btn btn-form-submit text-uppercase" type="submit">Go!</button>
+            </div>  
+          </form>
+          <form class="tab-pane" id="phone-search" role="tabpanel" aria-labelledby="phone-tab">
+            <div class="input-group">
+              <input class="form-control" type="text" name="phone" placeholder="Enter a Phone Number" />
+              <p class="error-msg">Please enter a valid phone number</p>
+              <button class="btn btn-form-submit text-uppercase" type="submit">Go!</button>
+            </div>
+          </form>
           <div class="d-flex justify-content-start justify-content-md-end align-items-center mt-4">
             <img src="img/icn_lock.svg" alt="lock">
             <p class="form-subtext">People in the search won't be notified.</p>
           </div>
-        </form>
+        </div>
       </div>
     </section>
 

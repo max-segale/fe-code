@@ -6,39 +6,60 @@ $(document).ready(function () {
   if (window.localStorage) {
     if (localStorage.userObject) {
       var user_object = localStorage.getItem('userObject');
-      var testVar;
-      retreivedObject = JSON.parse(user_object); //parses the retrieved object into an JSON object
-      if (JSON.stringify(retreivedObject) == "[]") {
-        $('#result-count').text("0 Results");
-        $(".result-desc").text(
-          "Try starting a new search below"
+
+      // Parse the retrieved object into an JSON object
+      retreivedObject = JSON.parse(user_object);
+
+      if (JSON.stringify(retreivedObject) == '[]') {
+        // Show no results
+        $('#result-count').text(
+          '0 Results'
+        );
+        $('#result-subtext').text(
+          'Try starting a new search below'
         );
       } else {
-        $('#result-count').text("1 Result");
-        $("#result-subtext").html("Look at the result below to see the details of the person you’re searched for.");
-        $(".name").append(
-          retreivedObject.first_name + " " + retreivedObject.last_name
+        // Populate person data
+        $('#result-count').text(
+          '1 Result'
         );
-        $('.user-description').append(retreivedObject.description);
-        $("#address").append("<p>" + retreivedObject.address + '</p>');
-        $(".email").append("<p>" + retreivedObject.email + "</p>");
+        $('#result-subtext').html(
+          'Look at the result below to see the details of the person you&rsquo;re searched for.'
+        );
+        $('#user-name').append(
+          retreivedObject.first_name + ' ' + retreivedObject.last_name
+        );
+        $('#user-description').append(
+          retreivedObject.description
+        );
+        $('#user-address').append(
+          retreivedObject.address
+        );
+        $('#user-email').append(
+          retreivedObject.email
+        );
 
+        // Possibly multiple phone numbers
         for (const phone_number in retreivedObject.phone_numbers) {
-          phone = retreivedObject.phone_numbers[phone_number]
-          formatted_phone = "(" + phone.substring(0, 3) + ") " + phone.substring(3, 6) + "-" + phone.substring(6, 10);
+          phone = retreivedObject.phone_numbers[phone_number];
 
-          $(".phone-num").append(
-            "<a href=" + `tel:${phone}` + " style='display: block;color: #004A80;'>" + `${formatted_phone}` + "</a>"
+          // Display in traditional phone number format
+          formatted_phone = `(${phone.substring(0, 3)}) ${phone.substring(3, 6)}-${phone.substring(6, 10)}`;
+
+          $('#user-phone-num').append(
+            `<a class="result-phone-link" href="tel:${phone}">${formatted_phone}</a>`
           );
         }
 
+        // Possibly multiple relatives
         for (const relative in retreivedObject.relatives) {
-          $(".relatives").append(
-            "<p style='margin-bottom: 0'>" + `${retreivedObject.relatives[relative]}` + "</p>"
+          $('#user-relatives').append(
+            `<p class="mb-0">${retreivedObject.relatives[relative]}</p>`
           );
         }
 
-        $(".result-wrap").show();
+        // Show result after all the data has been added
+        $('.result-wrap').show();
       }
     }
   }

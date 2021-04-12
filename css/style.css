@@ -469,6 +469,11 @@ section {
   color: #4A4A4A;
 }
 
+.result-phone-link {
+  display: block;
+  color: #004A80;
+}
+
 @media (max-width: 991px) {
   .result {
     min-height: 512px;
